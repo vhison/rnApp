@@ -1,0 +1,125 @@
+{  
+  "screen": {
+    "menu": "Menu",
+    "createRide": "Creating a Ride",
+    "leader": "Leaderboard",
+    "output": "Create a Ride",
+    "streak": "Streak",
+    "bet": "Make Your Bet",
+    "pay": "Paypal Screen",
+    "admin": "Peloton Admin",
+    "transactions": "Transactions History",
+    "rides": "User Rides",
+    "workouts": "User Workouts",
+    "thankyou": "Thank you!"
+  },
+  "button": {
+    "ok": "Ok",
+    "cancel": "Cancel",
+    "yes": "Yes",
+    "no": "No",
+    "back": "Back",
+    "next": "Next",
+    "invite": "Invite",
+    "submit": "Submit",        
+    "continue": "Continue",        
+    "verify": "Verify Now",        
+    "logout": "Logout",    
+    "admin": "Peloton Admin",    
+    "finish": "Finish",
+    "connect": "Connect",
+    "join": "Join Challenge",
+    "go": "Let’s Go"
+  },
+  "errors": {    
+    "email": "Please enter email",
+    "validEmail": "Please enter valid email.",
+    "password": "Please enter valid password.",
+    "phoneNumber": "Please enter valid phone number",    
+    "days": "Maximum days will be 366",    
+    "percentage": "Maximum percentage will be 100",    
+    "daysRequired": "Please fill the Time to complete.",   
+    "dayRequired": "Please set # of days.",   
+    "ridesRequired": "Please fill the Number of Rides.",   
+    "classRequired": "Please select the class.",   
+    "outputRequired": "Please select the output.",   
+    "tieRequired": "Please choose Tie breaker.",   
+    "amountRequired": "Please fill the Bet Amount.",   
+    "charityRequired": "Please select the charity.",   
+    "percentRequired": "Please fill the Charity Percentage.",   
+    "codeRequired": "Please enter the code!",   
+    "bike": "Please connect your bike.",   
+    "ride": "Please Select Ride Type!",   
+    "challenge": "You have created this challenge.",   
+    "session": "Session Expired!",   
+    "signup": "Signup Failed, Please try again",   
+    "codeInvalid": "Invalid code",   
+    "noRecord": "No Record"   
+  },
+  "confirm": {
+    "logout": "Are you sure you want to logout?",
+    "exit": "Are you sure you want to exit?"
+  },
+  "splash": {
+    "caption": "Welcome to Peddler!",
+    "headlineFirst": "Create a challenge, Join a challenge, invite your friends, support great causes!",
+    "headlineSecond": "Create a Challenge. Join a Challenge",
+    "headlineThird": "Invite your friends, Choose a charity, Start challenge."
+  },
+  "verification": {
+    "headline": "OTP Verification",
+    "subheading": "Check your SMS messages. We've sent you the PIN at",
+    "caption": "Didn't you receive any code?",
+    "resendText": "Re-send code"
+  },
+  "signup": {
+    "headline": "Enter your phone number to continue",
+    "subheading": "A 6-digit OTP will be send via SMS to verify your phone number",
+    "caption": "By signing up, you're agree to our",
+    "termsText": "Terms of Use",
+    "privacyText": "Privacy Policy",
+    "and": "and",
+    "email": "Your email",
+    "phoneNumber": "Phone number"   
+  },    
+  "home": {
+    "headline": "Connect your bike",
+    "subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
+    "connect": "Connect with account",
+    "welcome": "Welcome to peddle",
+    "connected": "Connected Bike",
+    "create": "Create a ride",
+    "join": "Join a ride",
+    "title": "My Challenges",
+    "caption": "View All"
+  },
+  "ride": {
+    "select": "Select Ride Type",
+    "days": "Time to complete (# of days)",
+    "rides": "Select # of rides",
+    "class": "Select Classes",
+    "output": "Select output",
+    "rideCount": "Number of rides",
+    "daysCount": "Time to complete",
+    "dayCount": "Set # of days",
+    "tie": "Tie breaker",
+    "charity": "Select your charity",
+    "percent": "Charity Split %",
+    "amount": "Your Amount:",
+    "bet": "Bet Amount"
+  },
+  "join": {
+    "code": "Join via code",
+    "accept": "Take your training to new heights. Stay on track with your goals, discover new classes and see yourself improve.",
+    "pay": "Link PayPal account and pay amount to join challenge"
+  },
+  "admin": {
+    "rides": "User Rides",
+    "workouts": "User Workouts",
+    "payments": "Payments"
+  },
+  "storybook": {
+    "placeholder": "Placeholder",
+    "field": "Field"
+  }
+}
