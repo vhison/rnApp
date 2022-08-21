@@ -1,4 +1,4 @@
-Peddle Monorepo
+React Native App Monorepo
 
 ## Deployment / Build Status
 
