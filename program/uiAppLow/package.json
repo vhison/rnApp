@@ -1,0 +1,32 @@
+{
+  "name": "uiAppLow",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "pod-install": "test -n \"$NOYARNPOSTINSTALL\" || npx pod-install",
+    "start": "npx react-native start",
+    "android": "npx react-native run-android",
+    "android:logcat": "adb logcat ReactNative:V ReactNativeJS:V",
+    "android:adb": "adb reverse tcp:9090 tcp:9090 && adb reverse tcp:3000 tcp:3000 && adb reverse tcp:9001 tcp:9001 && adb reverse tcp:8081 tcp:8081",
+    "ios": "npx react-native run-ios",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "react": "16.13.1",
+    "react-native": "0.63.3"
+  },
+  "devDependencies": {
+    "@babel/core": "7.8.4",
+    "@babel/runtime": "7.8.4",
+    "@react-native-community/eslint-config": "1.1.0",
+    "babel-jest": "25.1.0",
+    "eslint": "6.5.1",
+    "jest": "25.1.0",
+    "metro-react-native-babel-preset": "0.59.0",
+    "react-test-renderer": "16.13.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
