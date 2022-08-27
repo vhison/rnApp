@@ -7,7 +7,7 @@ export const GetStarted = () => {
   return (
     <SafeAreaView style={styles.containerWhite}>
       <View>
-        <Text> Welcome!</Text>
+        <Text> Welcome To App!</Text>
       </View>
     </SafeAreaView>
   );

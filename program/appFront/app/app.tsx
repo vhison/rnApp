@@ -5,8 +5,6 @@
  * if you're interested in adding screens and navigators.
  */
 // import './i18n';
-import './utils/ignore-warnings';
-
 import React, {useEffect, useRef} from 'react';
 import {
   initialWindowMetrics,
@@ -17,9 +15,7 @@ import {
 // stack navigation, use `createNativeStackNavigator` in place of `createStackNavigator`:
 // https://github.com/kmagiera/react-native-screens#using-native-stack-navigator
 import {enableScreens} from 'react-native-screens';
-
 import {NavigationContainerRef} from '@react-navigation/native';
-
 import {
   canExit,
   RootNavigator,
@@ -27,7 +23,6 @@ import {
   useBackButtonHandler,
   useNavigationPersistence,
 } from './navigation';
-//  import { initFonts } from './theme/fonts'
 import * as storage from './utils/storage';
 
 enableScreens();
@@ -52,7 +47,6 @@ function App() {
   // In the meantime, don't render anything. This will be the background
   // color set in native by rootView's background color. You can replace
   // with your own loading component if you wish.
-
   // if (!rootStore) return null
 
   // otherwise, we're ready to render the app

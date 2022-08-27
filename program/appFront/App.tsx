@@ -1,15 +1,6 @@
-import React from 'react';
-import {SafeAreaView, Text, View} from 'react-native';
+import App from './app/app';
 
-const App = () => {
-  return (
-    <SafeAreaView>
-      <View style={{alignItems: 'center', justifyContent: 'center'}}>
-        <Text>Welcome</Text>
-        <Text>React Native App</Text>
-      </View>
-    </SafeAreaView>
-  );
-};
+// Should we show storybook instead of our app?
+let RootComponent = App;
 
-export default App;
+export default RootComponent;
