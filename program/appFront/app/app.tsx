@@ -16,6 +16,7 @@ import {
 // https://github.com/kmagiera/react-native-screens#using-native-stack-navigator
 import {enableScreens} from 'react-native-screens';
 import {NavigationContainerRef} from '@react-navigation/native';
+import {StoreProvider} from './models';
 import {
   canExit,
   RootNavigator,
@@ -51,15 +52,17 @@ function App() {
 
   // otherwise, we're ready to render the app
   return (
-    <SafeAreaProvider
-      initialMetrics={initialWindowMetrics}
-      initialSafeAreaInsets={initialWindowSafeAreaInsets}>
-      <RootNavigator
-        ref={navigationRef}
-        initialState={initialNavigationState}
-        onStateChange={onNavigationStateChange}
-      />
-    </SafeAreaProvider>
+    <StoreProvider>
+      <SafeAreaProvider
+        initialMetrics={initialWindowMetrics}
+        initialSafeAreaInsets={initialWindowSafeAreaInsets}>
+        <RootNavigator
+          ref={navigationRef}
+          initialState={initialNavigationState}
+          onStateChange={onNavigationStateChange}
+        />
+      </SafeAreaProvider>
+    </StoreProvider>
   );
 }
 
