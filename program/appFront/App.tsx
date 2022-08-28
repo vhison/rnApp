@@ -1,6 +1,6 @@
-import App from './app/app';
+import App from './app/app'
 
 // Should we show storybook instead of our app?
-let RootComponent = App;
+let RootComponent = App
 
-export default RootComponent;
+export default RootComponent

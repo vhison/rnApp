@@ -17,7 +17,7 @@ export class MappingError extends Error {
     if (!isAbleToMap) {
       // console.log('json', json.workDestination)
       const tab = '\t\t'
-      const modelKeys = filter(keys(model.properties), (key) => {
+      const modelKeys = filter(keys(model.properties), key => {
         const prop = model.properties[key]
         console.log('modelKeys', key, tab, prop.name, tab, prop.isType, keys(prop))
         // return includes(['identifier(string)', 'string', 'number', 'boolean'], prop.name)

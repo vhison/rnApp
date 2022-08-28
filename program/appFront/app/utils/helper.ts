@@ -1,13 +1,6 @@
-import moment from 'moment'
 export const capitalize = (value: string) => {
   const newStr = `${value[0].toUpperCase()}${value.slice(1)}`
   return newStr
-}
-export const getWeeksBetween = (startDate: string, endDate: string) => {
-  var a = moment(startDate, 'DD-MM-YYYY')
-  var b = moment(endDate, 'DD-MM-YYYY')
-  var days = b.diff(a, 'week')
-  return days
 }
 export const getDateFromTimestamp = (timestamp: string) => {
   let ts = parseInt(timestamp)

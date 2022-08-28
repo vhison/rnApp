@@ -4,11 +4,14 @@
  *
  * You'll likely spend most of your time in this file.
  */
-import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
-// import {createDrawerNavigator} from '@react-navigation/drawer';
+import React from 'react'
+import { createStackNavigator } from '@react-navigation/stack'
+// import { createDrawerNavigator } from '@react-navigation/drawer'
 // import { useNavigation } from '@react-navigation/native'
-import {GetStarted} from '../screens';
+import {
+  GetStarted,
+  //  DrawerMenu
+} from '../screens'
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
  * as well as what properties (if any) they might take when navigating to them.
@@ -19,22 +22,23 @@ import {GetStarted} from '../screens';
  *   https://reactnavigation.org/docs/typescript#type-checking-the-navigator
  */
 export type PrimaryParamList = {
-  getstarted: undefined;
-};
+  getstarted: undefined
+  // drawer: undefined
+}
 
-// const Drawer = createDrawerNavigator<PrimaryParamList>();
+// const Drawer = createDrawerNavigator<PrimaryParamList>()
 // function DrawerScreens() {
 //   return (
-//     <Drawer.Navigator drawerContent={() => <SideMenu />}>
-//       <Drawer.Screen name="home" component={HomeScreen} />
+//     <Drawer.Navigator drawerContent={() => <DrawerMenu />}>
+//       <Drawer.Screen name="getstarted" component={GetStarted} />
 //     </Drawer.Navigator>
-//   );
+//   )
 // }
 
 // Documentation: https://reactnavigation.org/docs/stack-navigator/
-const Stack = createStackNavigator<PrimaryParamList>();
+const Stack = createStackNavigator<PrimaryParamList>()
 export const PrimaryNavigator = () => {
-  const initialRouteName = 'getstarted';
+  const initialRouteName = 'getstarted'
 
   return (
     <Stack.Navigator
@@ -42,12 +46,13 @@ export const PrimaryNavigator = () => {
       screenOptions={{
         headerShown: false,
         gestureEnabled: true,
-        headerStyle: {borderBottomWidth: 0},
+        headerStyle: { borderBottomWidth: 0 },
       }}>
       <Stack.Screen name="getstarted" component={GetStarted} />
+      {/* <Stack.Screen name="drawer" component={DrawerScreens} /> */}
     </Stack.Navigator>
-  );
-};
+  )
+}
 
 /**
  * A list of routes from which we're allowed to leave the app when
@@ -58,5 +63,5 @@ export const PrimaryNavigator = () => {
  *
  * `canExit` is used in ./app/app.tsx in the `useBackButtonHandler` hook.
  */
-const exitRoutes = ['getstarted'];
-export const canExit = (routeName: string) => exitRoutes.includes(routeName);
+const exitRoutes = ['getstarted']
+export const canExit = (routeName: string) => exitRoutes.includes(routeName)

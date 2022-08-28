@@ -1,7 +1,7 @@
 // import { AxiosResponse } from 'axios'
-import {Instance, SnapshotOut, types} from 'mobx-state-tree';
-import {emitter, LogoutEvent} from '../../utils/events';
-import {withRootStore} from '../extensions';
+import { Instance, SnapshotOut, types } from 'mobx-state-tree'
+import { emitter, LogoutEvent } from '../../utils/events'
+import { withRootStore } from '../extensions'
 
 /**
  * A SessionTokenStore model.
@@ -17,12 +17,12 @@ export const SessionTokenStoreModel = types
   .extend(withRootStore)
   .actions(self => ({
     setRefreshToken(token?: string) {
-      console.log('setRefreshToken', token);
-      self.refreshToken = token;
+      console.log('setRefreshToken', token)
+      self.refreshToken = token
     },
     setToken(token?: string) {
-      console.log('setToken', token);
-      self.token = token;
+      console.log('setToken', token)
+      self.token = token
       // env.gqlHttpClient.setHeaders({authorization: `bearer ${token}`});
       // const root = self.rootStore
       // root.services.setToken(token)
@@ -32,13 +32,13 @@ export const SessionTokenStoreModel = types
     // const root = self.rootStore
 
     const logout = () => {
-      self.setToken(undefined);
+      self.setToken(undefined)
       // applySnapshot(self, {})
-    };
+    }
 
     const login = async (email: string, password: string) => {
       try {
-        console.log('login', {email, password});
+        console.log('login', { email, password })
         // ... yield can be used in async/await style
         // const response: AuthenticationResponse = await root.services.api.session.post('/auth/login', {
         //   email,
@@ -51,48 +51,46 @@ export const SessionTokenStoreModel = types
         // }
       } catch (error) {
         // ... including try/catch error handling
-        console.error('unable to login', {error});
-        logout();
+        console.error('unable to login', { error })
+        logout()
       }
-      console.log('JWT', {token: self.token});
+      console.log('JWT', { token: self.token })
       // The action will return a promise that resolves to the returned value
       // (or rejects with anything thrown from the action)
-      return self.token;
-    };
+      return self.token
+    }
 
-    return {login, logout};
+    return { login, logout }
   })
   .actions(self => {
     const afterCreate = () => {
-      self.isBootstrapped = false;
-      console.log('token', self.token);
-      self.setToken(self.token);
+      self.isBootstrapped = false
+      console.log('token', self.token)
+      self.setToken(self.token)
       // self.setToken(
       //   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOWE1MzBkYjFjOWVkODMzZmQ4NDM0ZiIsImlhdCI6MTU5MTMxOTE1NSwiZXhwIjoxNTkxMzIyNzU1fQ.EQqELb20xdvqg6i12f-RkXCr1Os0LEO9VNMephDlAso'
       // )
-      emitter.addListener(LogoutEvent, self.logout);
-      self.isBootstrapped = true;
-    };
+      emitter.addListener(LogoutEvent, self.logout)
+      self.isBootstrapped = true
+    }
     const beforeDestroy = () => {
-      emitter.removeListener(LogoutEvent, self.logout);
-      return;
-    };
-    return {afterCreate, beforeDestroy};
+      emitter.removeListener(LogoutEvent, self.logout)
+      return
+    }
+    return { afterCreate, beforeDestroy }
   })
   .views(self => ({
     get isLoggedIn() {
-      return self.token !== undefined;
+      return self.token !== undefined
     },
-  }));
+  }))
 
 /**
  * The SessionTokenStore instance.
  */
-export type SessionTokenStore = Instance<typeof SessionTokenStoreModel>;
+export type SessionTokenStore = Instance<typeof SessionTokenStoreModel>
 
 /**
  * The data of a SessionTokenStore.
  */
-export type SessionTokenStoreSnapshot = SnapshotOut<
-  typeof SessionTokenStoreModel
->;
+export type SessionTokenStoreSnapshot = SnapshotOut<typeof SessionTokenStoreModel>
