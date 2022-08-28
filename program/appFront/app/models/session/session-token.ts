@@ -23,7 +23,7 @@ export const SessionTokenStoreModel = types
     setToken(token?: string) {
       console.log('setToken', token);
       self.token = token;
-      env.gqlHttpClient.setHeaders({authorization: `bearer ${token}`});
+      // env.gqlHttpClient.setHeaders({authorization: `bearer ${token}`});
       // const root = self.rootStore
       // root.services.setToken(token)
     },

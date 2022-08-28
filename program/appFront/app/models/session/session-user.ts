@@ -17,28 +17,17 @@ export const SessionUserStoreModel = types
   .model('SessionUserStoreModel')
   .props({
     user: types.maybe(RegisterUsers),
+    input: types.optional(types.number, 0),
   })
   .extend(withRootStore)
   .actions(self => ({
     setUser(user: any) {
       self.user = user;
     },
+    setInput(note: number) {
+      self.input = note;
+    },
   }));
-// .actions((self) => {
-//   const root = self.rootStore
-//   const getUser = async () => {
-//     try {
-//       const response: IUserResponse = await root.services.api.session.get('/users')
-//       const { data } = response
-//       self.setUser(data)
-//     } catch (error) {
-//       console.error('unable to getUser', { error })
-//     }
-//     return self
-//   }
-
-//   return { getUser }
-// })
 
 /**
  * The SessionUserStore instance.

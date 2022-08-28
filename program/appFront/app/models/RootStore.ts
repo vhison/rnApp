@@ -33,10 +33,10 @@ export const getDefaultStore = async () => {
     try {
       // load data from storage
       const data = await Storage.load(ROOT_STATE_STORAGE_KEY);
-      // console.log(
-      //   '[root.store.getDefaultStore] loaded data from storage',
-      //   RootStoreModel.is(data),
-      // );
+      console.log(
+        '[root.store.getDefaultStore] loaded data from storage',
+        RootStoreModel.is(data),
+      );
       // console.log(
       //   '[root.store.getDefaultStore] loaded data from storage',
       //   JSON.stringify(data, null, 10),
@@ -69,7 +69,7 @@ export const getDefaultStore = async () => {
         ROOT_STATE_STORAGE_KEY,
         snapshot,
       );
-      //console.log('[root.store.getDefaultStore] snap! onSnapshot isSuccessfullySaved', isSuccessfullySaved)
+      // console.log('[root.store.getDefaultStore] snap! onSnapshot isSuccessfullySaved', isSuccessfullySaved)
       return isSuccessfullySaved;
     });
   }
