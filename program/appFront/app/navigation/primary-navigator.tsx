@@ -6,12 +6,9 @@
  */
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
-// import { createDrawerNavigator } from '@react-navigation/drawer'
-// import { useNavigation } from '@react-navigation/native'
-import {
-  GetStarted,
-  //  DrawerMenu
-} from '../screens'
+import { createDrawerNavigator } from '@react-navigation/drawer'
+import { useNavigation } from '@react-navigation/native'
+import { GetStarted, DrawerMenu } from '../screens'
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
  * as well as what properties (if any) they might take when navigating to them.
@@ -23,22 +20,22 @@ import {
  */
 export type PrimaryParamList = {
   getstarted: undefined
-  // drawer: undefined
+  drawer: undefined
 }
 
-// const Drawer = createDrawerNavigator<PrimaryParamList>()
-// function DrawerScreens() {
-//   return (
-//     <Drawer.Navigator drawerContent={() => <DrawerMenu />}>
-//       <Drawer.Screen name="getstarted" component={GetStarted} />
-//     </Drawer.Navigator>
-//   )
-// }
+const Drawer = createDrawerNavigator<PrimaryParamList>()
+function DrawerScreens() {
+  return (
+    <Drawer.Navigator drawerContent={() => <DrawerMenu />}>
+      <Drawer.Screen name="getstarted" component={GetStarted} />
+    </Drawer.Navigator>
+  )
+}
 
 // Documentation: https://reactnavigation.org/docs/stack-navigator/
 const Stack = createStackNavigator<PrimaryParamList>()
 export const PrimaryNavigator = () => {
-  const initialRouteName = 'getstarted'
+  const initialRouteName = 'drawer'
 
   return (
     <Stack.Navigator
@@ -48,8 +45,7 @@ export const PrimaryNavigator = () => {
         gestureEnabled: true,
         headerStyle: { borderBottomWidth: 0 },
       }}>
-      <Stack.Screen name="getstarted" component={GetStarted} />
-      {/* <Stack.Screen name="drawer" component={DrawerScreens} /> */}
+      <Stack.Screen name="drawer" component={DrawerScreens} />
     </Stack.Navigator>
   )
 }

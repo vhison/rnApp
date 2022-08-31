@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, Alert, ActivityIndicator, Platform } from 'react-native'
 import { CommonActions, useNavigation, DrawerActions } from '@react-navigation/native'
-// import { DrawerItem, DrawerContentScrollView } from '@react-navigation/drawer'
+import { DrawerItem, DrawerContentScrollView } from '@react-navigation/drawer'
 import styles from '../../styles/globalStyle'
 import { verticalScale } from '../../styles/sizes'
 
@@ -24,20 +24,26 @@ export function DrawerMenu() {
   //   }, 250)
 
   return (
-    <View />
-    // <DrawerContentScrollView>
-    //   <View style={[styles.container, { height: verticalScale(730), justifyContent: 'space-between' }]}>
-    //     <Drawer.Section title={`Menus`}>
-    //       <View>
-    //         <Text> First</Text>
-    //       </View>
-    //     </Drawer.Section>
-    //     <Drawer.Section>
-    //       <View>
-    //         <Text> Second</Text>
-    //       </View>
-    //     </Drawer.Section>
-    //   </View>
-    // </DrawerContentScrollView>
+    // <View />
+    <DrawerContentScrollView>
+      <View style={[styles.container, { height: verticalScale(730), justifyContent: 'flex-start' }]}>
+        <View>
+          <Text> First</Text>
+        </View>
+        <View>
+          <Text> Second</Text>
+        </View>
+        {/* <Drawer.Section title={`Menus`}>
+          <View>
+            <Text> First</Text>
+          </View>
+        </Drawer.Section>
+        <Drawer.Section>
+          <View>
+            <Text> Second</Text>
+          </View>
+        </Drawer.Section> */}
+      </View>
+    </DrawerContentScrollView>
   )
 }

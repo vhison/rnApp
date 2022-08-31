@@ -1,10 +1,12 @@
 import { observer } from 'mobx-react-lite'
 import React from 'react'
 import { SafeAreaView, View, Text, TouchableOpacity } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 
 import { useStore } from '../../models'
 import styles from '../../styles/globalStyle'
 export const GetStarted = observer(() => {
+  const navigation = useNavigation()
   const store = useStore()
   const session = store.session
 
@@ -13,7 +15,7 @@ export const GetStarted = observer(() => {
       <View>
         <TouchableOpacity onPress={() => session.setInput(session.input + 1)}>
           <View style={{ backgroundColor: 'green', padding: 10, borderRadius: 10 }}>
-            <Text> + </Text>
+            <Text> Add +1 </Text>
           </View>
         </TouchableOpacity>
         <Text> Welcome To App!{session.input}</Text>
@@ -22,6 +24,11 @@ export const GetStarted = observer(() => {
             <Text> Clear </Text>
           </View>
         </TouchableOpacity>
+        {/* <TouchableOpacity onPress={() => navigation.navigate('drawer')}>
+          <View style={{ backgroundColor: 'pink', padding: 10, borderRadius: 10 }}>
+            <Text> OPEN </Text>
+          </View>
+        </TouchableOpacity> */}
       </View>
     </SafeAreaView>
   )
