@@ -1,14 +1,13 @@
 import React from 'react'
 import { View, Text, Alert, ActivityIndicator, Platform } from 'react-native'
-import { CommonActions, useNavigation, DrawerActions } from '@react-navigation/native'
-import { DrawerItem, DrawerContentScrollView } from '@react-navigation/drawer'
+import { CommonActions, useNavigation } from '@react-navigation/native'
+import { DrawerContentScrollView } from '@react-navigation/drawer'
 import styles from '../../styles/globalStyle'
 import { verticalScale } from '../../styles/sizes'
 import { Drawer } from 'react-native-paper'
 
 export function DrawerMenu() {
   const navigation = useNavigation()
-  const [isLoading, setIsLoading] = React.useState<boolean>(false)
 
   //   const userLogout = debounce(async () => {
   //     setIsLoading(true)

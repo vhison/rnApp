@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { SafeAreaView, View, Text, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
@@ -9,7 +9,7 @@ export const GetStarted = observer(() => {
   const navigation = useNavigation()
   const store = useStore()
   const session = store.session
-
+  // useEffect(() => {}, [])
   return (
     <SafeAreaView style={styles.containerWhite}>
       <View>
