@@ -7,7 +7,7 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { createDrawerNavigator } from '@react-navigation/drawer'
-import { useNavigation } from '@react-navigation/native'
+// import { useNavigation } from '@react-navigation/native'
 import { GetStarted, DrawerMenu } from '../screens'
 /**
  * This type allows TypeScript to know what routes are defined in this navigator

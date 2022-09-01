@@ -12,6 +12,7 @@ import { initialWindowMetrics, initialWindowSafeAreaInsets, SafeAreaProvider } f
 // https://github.com/kmagiera/react-native-screens#using-native-stack-navigator
 import { enableScreens } from 'react-native-screens'
 import { NavigationContainerRef } from '@react-navigation/native'
+import { Provider as PaperProvider } from 'react-native-paper'
 import { StoreProvider } from './models'
 import { canExit, RootNavigator, setRootNavigation, useBackButtonHandler, useNavigationPersistence } from './navigation'
 import * as storage from './utils/storage'
@@ -45,13 +46,15 @@ function App() {
   // otherwise, we're ready to render the app
   return (
     <StoreProvider>
-      <SafeAreaProvider initialMetrics={initialWindowMetrics} initialSafeAreaInsets={initialWindowSafeAreaInsets}>
-        <RootNavigator
-          ref={navigationRef}
-          initialState={initialNavigationState}
-          onStateChange={onNavigationStateChange}
-        />
-      </SafeAreaProvider>
+      <PaperProvider>
+        <SafeAreaProvider initialMetrics={initialWindowMetrics} initialSafeAreaInsets={initialWindowSafeAreaInsets}>
+          <RootNavigator
+            ref={navigationRef}
+            initialState={initialNavigationState}
+            onStateChange={onNavigationStateChange}
+          />
+        </SafeAreaProvider>
+      </PaperProvider>
     </StoreProvider>
   )
 }

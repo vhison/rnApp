@@ -4,6 +4,7 @@ import { CommonActions, useNavigation, DrawerActions } from '@react-navigation/n
 import { DrawerItem, DrawerContentScrollView } from '@react-navigation/drawer'
 import styles from '../../styles/globalStyle'
 import { verticalScale } from '../../styles/sizes'
+import { Drawer } from 'react-native-paper'
 
 export function DrawerMenu() {
   const navigation = useNavigation()
@@ -24,16 +25,9 @@ export function DrawerMenu() {
   //   }, 250)
 
   return (
-    // <View />
     <DrawerContentScrollView>
       <View style={[styles.container, { height: verticalScale(730), justifyContent: 'flex-start' }]}>
-        <View>
-          <Text> First</Text>
-        </View>
-        <View>
-          <Text> Second</Text>
-        </View>
-        {/* <Drawer.Section title={`Menus`}>
+        <Drawer.Section title={`Menus`}>
           <View>
             <Text> First</Text>
           </View>
@@ -42,7 +36,7 @@ export function DrawerMenu() {
           <View>
             <Text> Second</Text>
           </View>
-        </Drawer.Section> */}
+        </Drawer.Section>
       </View>
     </DrawerContentScrollView>
   )
