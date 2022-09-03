@@ -8,6 +8,7 @@
     "android": "npx react-native run-android",
     "android:logcat": "adb logcat ReactNative:V ReactNativeJS:V",
     "android:adb": "adb reverse tcp:9090 tcp:9090 && adb reverse tcp:3000 tcp:3000 && adb reverse tcp:9001 tcp:9001 && adb reverse tcp:8081 tcp:8081",
+    "android:build:release": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
     "ios": "npx react-native run-ios",
     "test": "jest",
     "lint": "eslint ."

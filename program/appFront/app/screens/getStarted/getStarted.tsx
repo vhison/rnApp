@@ -14,21 +14,21 @@ export const GetStarted = observer(() => {
     <SafeAreaView style={styles.containerWhite}>
       <View>
         <TouchableOpacity onPress={() => session.setInput(session.input + 1)}>
-          <View style={{ backgroundColor: 'green', padding: 10, borderRadius: 10 }}>
+          <View style={{ backgroundColor: 'green', padding: 10, borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
             <Text> Add +1 </Text>
           </View>
         </TouchableOpacity>
         <Text> Welcome To App!{session.input}</Text>
         <TouchableOpacity onPress={() => session.setInput(0)}>
-          <View style={{ backgroundColor: 'red', padding: 10, borderRadius: 10 }}>
+          <View style={{ backgroundColor: 'red', padding: 10, borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
             <Text> Clear </Text>
           </View>
         </TouchableOpacity>
-        {/* <TouchableOpacity onPress={() => navigation.navigate('drawer')}>
-          <View style={{ backgroundColor: 'pink', padding: 10, borderRadius: 10 }}>
-            <Text> OPEN </Text>
+        <TouchableOpacity onPress={() => navigation.navigate('userlist')}>
+          <View style={{ backgroundColor: 'pink', padding: 10, borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}>
+            <Text> Show Users </Text>
           </View>
-        </TouchableOpacity> */}
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   )

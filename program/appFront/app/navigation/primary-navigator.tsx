@@ -8,7 +8,7 @@ import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 // import { useNavigation } from '@react-navigation/native'
-import { GetStarted, DrawerMenu } from '../screens'
+import { GetStarted, DrawerMenu, UsersList } from '../screens'
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
  * as well as what properties (if any) they might take when navigating to them.
@@ -21,6 +21,7 @@ import { GetStarted, DrawerMenu } from '../screens'
 export type PrimaryParamList = {
   getstarted: undefined
   drawer: undefined
+  userlist: undefined
 }
 
 const Drawer = createDrawerNavigator<PrimaryParamList>()
@@ -46,6 +47,7 @@ export const PrimaryNavigator = () => {
         headerStyle: { borderBottomWidth: 0 },
       }}>
       <Stack.Screen name="drawer" component={DrawerScreens} />
+      <Stack.Screen name="userlist" component={UsersList} />
     </Stack.Navigator>
   )
 }
