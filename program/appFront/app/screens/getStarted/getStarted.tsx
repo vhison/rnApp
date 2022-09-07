@@ -139,5 +139,10 @@ const ENTRIES = [
 | program/appFront/node_modules/react-native-snap-carousel/src
 | 
 | Output screens are attached here program/appFront/app/extra
+
+| yarn add @babel/plugin-transform-template-literals --dev
+| yarn add @babel/plugin-proposal-nullish-coalescing-operator --dev
+| yarn add @babel/plugin-proposal-optional-chaining --dev   
+| yarn add @babel/plugin-transform-arrow-functions --dev  
 |--------------------------------------------------
 */
